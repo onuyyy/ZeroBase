@@ -1,12 +1,6 @@
 package Part02.Chapter04;
 
 public class BianrySearchPractice2 {
-    public static int solution4(int[] weights, int days) {
-
-
-
-        return 0;
-    }
 
     public static boolean solution3(int[][] matrix, int target) {
         /*
@@ -142,7 +136,5 @@ public class BianrySearchPractice2 {
         System.out.println(solution3(matrix, 13)); // false
         System.out.println(solution3(matrix, 35)); // true
 
-        System.out.println();
-        System.out.println("Solution 4");
     }
 }
