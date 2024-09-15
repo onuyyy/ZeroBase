@@ -9,6 +9,7 @@ public class mini2 {
         - 결제 금액의 10% 적립
         - 캐시백 포인트 단위는 백 원 단위
         - 한 건의 캐시백 포인트는 최대 300원을 넘을 수 없다.
+        김윤영
      */
     public static void main(String[] args) {
 

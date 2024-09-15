@@ -21,12 +21,32 @@ public class mini5 {
         int month = sc.nextInt();
         sc.nextLine();
 
-        LocalDate lc = LocalDate.of(year, month, 1);
-        int day = lc.getDayOfWeek().getValue();
-        int lastDay = lc.lengthOfMonth();
+        for (int i = 0; i < 3; i++) {
+            LocalDate lc = LocalDate.of(year, month - 1 + i, 1);
+            // 요일을 1(월요일)~7(일요일)로 받음
+            int day = lc.getDayOfWeek().getValue();
+            // 일요일을 0으로 조정, 월요일은 1, 화요일은 2 ...
+            day = (day == 7) ? 0 : day;
+            int lastDay = lc.lengthOfMonth();
 
-        System.out.println("[" + year + "년 " + String.format("%02d월]", month));
-        System.out.println("일   월   화   수   목   금   토");
+            System.out.println("[" + year + "년 " + String.format("%02d월]", month - 1 + i));
+            System.out.print("일\t월\t화\t수\t목\t금\t토\n");
+
+            for (int j = 0; j < day; j++) {
+                System.out.print("\t");
+            }
+
+            for (int j = 1; j < lastDay; j++) {
+                System.out.printf("%02d\t", j);
+
+                if ((j + day) % 7 == 0 || j == lastDay) {
+                    System.out.println();
+                }
+            }
+            System.out.println();
+        }
+
+
 
         sc.close();
     }

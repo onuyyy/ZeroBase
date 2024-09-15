@@ -2,7 +2,8 @@ package Assignment;
 
 public class mini1 {
         /*
-            구구단 출력 format 함수 이용
+            구구단 출력 format 함수
+            김윤영
          */
 
     public static void main(String[] args) {

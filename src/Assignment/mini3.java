@@ -14,6 +14,8 @@ public class mini3 {
             기본 : 10,000원
             특별 할인 : 4,000원
             일반 할인 : 8,000원
+
+            김윤영
      */
     public static void main(String[] args) {
 

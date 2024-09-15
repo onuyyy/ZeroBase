@@ -10,6 +10,8 @@ public class mini4 {
         - 입력 값은 생년, 월, 일 성별과 임의의 번호 통하여 생성
         - 임의의 번호는 random의 nextInt 함수 통해 생성 (1 ~ 999999)
         - 입력 값은 2020년도 이후로 입력한다는 전제
+
+        김윤영
      */
     public static void main(String[] args) {
 
