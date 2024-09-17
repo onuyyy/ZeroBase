@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class Stack_0916 {
+public class BJ_25556_Stack {
     public static boolean solution(int n, int[] arr) {
 
         Stack<Integer>[] stacks = new Stack[4];
