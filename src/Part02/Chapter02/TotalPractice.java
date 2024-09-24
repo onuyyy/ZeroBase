@@ -2,7 +2,76 @@ package Part02.Chapter02;
 
 import java.util.Arrays;
 
+class NodeT {
+    int data;
+    int cmd;
+    boolean visited;
+    NodeT next;
+    NodeT prev;
+    public NodeT(int data, int cmd, boolean visited, NodeT next, NodeT prev) {
+        this.data = data;
+        this.cmd = cmd;
+        this.visited = visited;
+        this.next = next;
+        this.prev = prev;
+    }
+}
+
+class LinkedListT {
+    NodeT head;
+
+    public void add(int data, int cmd) {
+        if (this.head == null) {
+            this.head = new NodeT(data, cmd, false, null, null);
+            this.head.next = this.head;
+            this.head.prev = this.head;
+        } else {
+            NodeT cur = this.head;
+            while (cur.next != this.head) {
+                cur = cur.next;
+            }
+            cur.next = new NodeT(data, cmd, false, cur.next, cur);
+            this.head.prev = cur.next;
+        }
+    }
+}
+
 public class TotalPractice {
+
+    public static void solution3(int[] data) {
+        LinkedListT list = new LinkedListT();
+        for (int i = 0; i < data.length; i++) {
+            list.add(i + 1, data[i]);
+        }
+        
+        NodeT cur = list.head;
+        
+        int visitCnt = 0;
+        int cmd = 0;
+        while (visitCnt != data.length) {
+            int cnt = 0;
+            while (cnt != Math.abs(cmd)) {
+                if (cmd > 0) {
+                    cur = cur.next;
+                } else {
+                    cur = cur.prev;
+                }
+                
+                if (cur.visited == false) {
+                    cnt++;
+                }
+            }
+            // 터트리기 이전에서 멈춰서 현재 cur.next가 터트려야 할 것을 가리키고 있음
+            System.out.print(cur.data + " ");
+            // 현재 터트린 풍선 true로 바꿈
+            cur.visited = true;
+            // 실제 터트린 개수 count
+            visitCnt++;
+            // 터트린 풍선의 cmd를 갱신해준다
+            cmd = cur.cmd;
+        }
+        System.out.println();
+    }
 
     // m * n 행렬 데이터에서
     // 행렬의 원소 중에 0이 있을 경우 위치하는 행과 열 데이터를 0으로 변경해라
@@ -116,5 +185,12 @@ public class TotalPractice {
         System.out.println();
         matrix = new int[][]{{1, 1, 0}, {1, 1, 1}, {0, 1, 1}};
         solution2(matrix);
+        System.out.println();
+
+        System.out.println("Soluion 3");
+        int[] balloon = {3, 2, 1, -3, -1};
+        solution3(balloon);
+        balloon = new int[]{3, 2, -1, -2};
+        solution3(balloon);
     }
 }
