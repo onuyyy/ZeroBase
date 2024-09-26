@@ -1,8 +1,6 @@
 package Part02.Chapter04;
 
-import Assignment.Main;
-
-public class DivedAndConquerPractice {
+public class DivideAndConquerPractice {
 
     public static int solution1(int[] nums) {
         /*
@@ -57,10 +55,11 @@ public class DivedAndConquerPractice {
         }
         return maxLeft + maxRight;
     }
+
     public static int getMax(int[] arr, int left, int right) {
         int m = (left + right) / 2;
 
-        // 탈출 조건
+        // 탈출 조건 재귀함수
         if(left == right) {
             return arr[left];
         }
