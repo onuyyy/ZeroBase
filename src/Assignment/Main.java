@@ -1,12 +1,86 @@
 package Assignment;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Main {
+    public static int solution12(int[] useageArr, int fee) {
+        int answer = 0;
+
+        for (Integer i : useageArr) {
+            answer =+ i*fee;
+        }
+
+        return answer;
+    }
+    public static boolean solution(String p, String s) {
+        boolean answer = true;
+
+        StringBuilder sb = new StringBuilder();
+        Hashtable<Integer, String> ht = new Hashtable<>();
+
+        int i = 0;
+        for (String str : p.split("")) {
+            ht.put(i++, str);
+        }
+
+        for (int j = 0; j < p.length(); j++) {
+
+        }
+
+        return answer;
+    }
+    public static int solution11(int[] arr) {
+
+        Arrays.sort(arr);
+        ArrayList<Integer> list = new ArrayList<>();
+
+        for (int i = 1; i < arr.length - 1; i++) {
+            list.add(arr[i]);
+        }
+
+        int sum = 0;
+        for (Integer i : list) {
+            sum += i;
+        }
+
+        return sum / list.size();
+    }
+
+    public static int[] solution10(int[] arr1, int[] arr2) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int a : arr1) {
+            map.put(a, map.getOrDefault(a, 0) + 1);
+        }
+
+        for (int b : arr2) {
+            if (map.containsKey(b)) {
+                list.add(b);
+            }
+        }
+
+        int[] answer = new int[list.size()];
+
+        for (int i = 0; i < list.size(); i++) {
+            answer[i] = list.get(i);
+        }
+
+        return answer;
+    }
+
+    public static int solution9(String s) {
+
+        HashMap map = new HashMap<>();
+
+        for (String str : s.split(" ")) {
+            map.put(str, 1);
+        }
+
+        return map.size();
+    }
 
     public int solution(int[] A) {
         int answer = A[0];  // 초기 값으로 첫 번째 요소를 설정
@@ -185,5 +259,20 @@ public class Main {
         System.out.println(solution6(order, n));
 
         System.out.println(solution8(5,"snowball",15));
+
+        System.out.println("solution 9");
+        System.out.println(solution9("Hello world Nice world"));
+
+        System.out.println("solution 10");
+        int[] arr1 = {1, 7, 8, 4};
+        int[] arr2 = {2, 4, 6, 8};
+
+        System.out.println(solution10(arr1, arr2));
+
+        System.out.println("solution 11");
+        System.out.println(solution11(arr1));
+
+        arr1 = new int[]{1, 3, 5};
+        System.out.println(solution12(arr1,5));
     }
 }
