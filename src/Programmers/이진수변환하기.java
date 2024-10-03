@@ -2,6 +2,11 @@ package Programmers;
 
 public class 이진수변환하기 {
     public static int solution3(String[] arr) {
+        // 예를 들어 문자열이었을 경우 정수로 바꾼다음에 이진수로 바꿔야 했고
+        // 이진수는 문자열 형태로 반환된다
+        //String aA = Integer.toBinaryString(A);
+        //String bB = Integer.toBinaryString(B);
+
         int answer = 0;
 
         for (String s : arr) {
